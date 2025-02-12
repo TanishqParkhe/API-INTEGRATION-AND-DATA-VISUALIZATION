@@ -1,0 +1,32 @@
+import requests
+import matplotlib.pyplot as plt
+
+
+def fetch_covid_data():
+    url = "https://disease.sh/v3/covid-19/countries"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Failed to fetch data")
+        return []
+
+
+def visualize_covid_data(data, top_n=10):
+    countries = sorted(data, key=lambda x: x['cases'], reverse=True)[:top_n]
+    country_names = [country['country'] for country in countries]
+    cases = [country['cases'] for country in countries]
+
+    plt.figure(figsize=(12, 6))
+    plt.bar(country_names, cases, color='skyblue')
+    plt.xlabel('Country')
+    plt.ylabel('Total Cases')
+    plt.title(f'Top {top_n} Countries by COVID-19 Cases')
+    plt.xticks(rotation=45)
+    plt.show()
+
+
+if __name__ == "__main__":
+    covid_data = fetch_covid_data()
+    if covid_data:
+        visualize_covid_data(covid_data)

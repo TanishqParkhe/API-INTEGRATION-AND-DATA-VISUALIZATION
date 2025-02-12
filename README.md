@@ -28,16 +28,16 @@ Using the Matplotlib library, the extracted data is visualized in a bar chart. T
 
 Features:
 
-Real-Time Data: The tool fetches the latest statistics, ensuring users get up-to-date information.
-Clear Visual Representation: The bar chart makes it easy to compare case numbers across different countries.
-Simple and Efficient: The script is lightweight and requires only Python and Matplotlib to run.
-Customizable: Users can adjust the number of countries displayed or modify the visualization style.
+1. Real-Time Data: The tool fetches the latest statistics, ensuring users get up-to-date information.
+2. Clear Visual Representation: The bar chart makes it easy to compare case numbers across different countries.
+3. Simple and Efficient: The script is lightweight and requires only Python and Matplotlib to run.
+4. Customizable: Users can adjust the number of countries displayed or modify the visualization style.
 
 Applications:
 
-General Awareness: Helps individuals understand the spread of COVID-19 globally.
-Research and Analysis: Useful for researchers studying the impact of the pandemic.
-Government and Policy Making: Authorities can use the data to make informed decisions
+1. General Awareness: Helps individuals understand the spread of COVID-19 globally.
+2. Research and Analysis: Useful for researchers studying the impact of the pandemic.
+3. Government and Policy Making: Authorities can use the data to make informed decisions
 
 #OUTPUT
 

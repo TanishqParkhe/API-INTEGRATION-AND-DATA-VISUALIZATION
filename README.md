@@ -14,30 +14,48 @@ MENTOR: NEELA SANTOSH
 
 #OVERVIEW OF THE PROJECT
 
-The COVID-19 Data Visualization Project is a Python-based tool designed to retrieve real-time COVID-19 case statistics from a public API and present the data using a bar chart. This project helps users understand the global impact of the virus by displaying the number of cases in the most affected countries. It combines data collection, processing, and visualization into a simple yet effective solution.
+Introduction:
+Asteroids, also known as minor planets, are small celestial objects orbiting the Sun. Some of them come very close to Earth, and tracking these near-Earth objects (NEOs) is important for planetary defense, space exploration, and scientific research. NASA provides real-time asteroid tracking data through its Near-Earth Object Web Service (NeoWs) API, which allows developers and researchers to access up-to-date asteroid information.
 
-Project Workflow
-Fetching Data from an API:
-The project retrieves COVID-19 case data from the Disease.sh API, which provides up-to-date information on the number of cases reported in each country. The data is fetched in JSON format, making it easy to process.
+This project focuses on retrieving asteroid data from NASA's API and visualizing the closest asteroids using Matplotlib. The visualization helps understand which asteroids are passing near Earth by displaying their names and distances in a simple bar chart. This graphical representation provides an easy-to-understand comparison of asteroid distances from our planet.
 
-Processing and Sorting the Data:
-Once the data is retrieved, it is sorted to identify the top countries with the highest number of COVID-19 cases. The program extracts relevant details, such as country names and case counts.
+Objectives:
+1. The main goals of this project are:
+2. Fetch real-time asteroid data from NASA’s public API.
+3. Extract relevant information such as asteroid names and distances.
+4. Sort the data to find the 10 closest asteroids to Earth.
+5. Visualize the asteroid distances using a bar chart.
+6. Ensure clarity in the graphical representation for easy interpretation.
 
-Visualizing the Data:
-Using the Matplotlib library, the extracted data is visualized in a bar chart. The x-axis represents the country names, while the y-axis shows the total number of cases. Customizations such as labels, colors, and rotated axis labels ensure readability.
+Project Workflow:
+1. Fetching Data from NASA’s API
+The first step is to connect to NASA’s Near-Earth Object API. The script makes a GET request to the API, retrieving asteroid data in JSON format for the current date. The API response contains a list of asteroids, along with details such as:
 
-Features:
+Asteroid name
+Closest approach date
+Miss distance (in kilometers)
 
-1. Real-Time Data: The tool fetches the latest statistics, ensuring users get up-to-date information.
-2. Clear Visual Representation: The bar chart makes it easy to compare case numbers across different countries.
-3. Simple and Efficient: The script is lightweight and requires only Python and Matplotlib to run.
-4. Customizable: Users can adjust the number of countries displayed or modify the visualization style.
+2. Processing the Data
+Once the data is fetched, the script processes it by:
 
-Applications:
+Extracting relevant information (name, distance).
+Sorting the asteroids by their closest approach distance.
+Selecting the 10 closest asteroids for visualization.
+Since some asteroids may have distances in the millions of kilometers, this step ensures that only the most relevant asteroids are displayed in the graph.
 
-1. General Awareness: Helps individuals understand the spread of COVID-19 globally.
-2. Research and Analysis: Useful for researchers studying the impact of the pandemic.
-3. Government and Policy Making: Authorities can use the data to make informed decisions
+3. Visualization with Matplotlib
+Matplotlib is used to create a horizontal bar chart, where:
+
+The asteroid names are placed on the Y-axis.
+The miss distance from Earth (in km) is plotted on the X-axis.
+Bars are color-coded for clarity.
+Grid lines are added to improve readability.
+The chart allows users to compare asteroid distances visually and quickly identify which ones are the closest to Earth.
+
+Conclusion:
+This project provides a clear and simple way to explore near-Earth asteroid data using NASA’s API. By fetching and visualizing asteroid distances, it helps in better understanding asteroid movements and their proximity to Earth. The combination of Python, API integration, and data visualization makes this a useful project for learning and scientific analysis.
+
+
 
 #OUTPUT
 

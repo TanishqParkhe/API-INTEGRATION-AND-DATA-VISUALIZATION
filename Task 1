@@ -39,7 +39,7 @@ def visualize_asteroid_data(data):
     plt.show()
 
 if __name__ == "__main__":
-    API_KEY = "DEMO_KEY"  # Replace with your NASA API key
+    API_KEY = "EnEvVVLS0P6LkdlPH22ePKID3Nj94ChVPga5Aoe5"  
     asteroid_data = fetch_asteroid_data(API_KEY)
     if asteroid_data:
         visualize_asteroid_data(asteroid_data)

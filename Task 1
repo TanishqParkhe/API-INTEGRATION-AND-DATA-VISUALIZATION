@@ -1,32 +1,48 @@
 import requests
 import matplotlib.pyplot as plt
+import datetime
 
-
-def fetch_covid_data():
-    url = "https://disease.sh/v3/covid-19/countries"
+def fetch_asteroid_data(api_key):
+    """
+    Fetch near-Earth object data from NASA's API.
+    """
+    url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={datetime.date.today()}&end_date={datetime.date.today()}&api_key={api_key}"
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()
     else:
         print("Failed to fetch data")
-        return []
+        return None
 
-
-def visualize_covid_data(data, top_n=10):
-    countries = sorted(data, key=lambda x: x['cases'], reverse=True)[:top_n]
-    country_names = [country['country'] for country in countries]
-    cases = [country['cases'] for country in countries]
-
+def visualize_asteroid_data(data):
+    """
+    Visualize the top 10 closest asteroids using a bar chart.
+    """
+    asteroids = []
+    for date in data['near_earth_objects']:
+        for asteroid in data['near_earth_objects'][date]:
+            asteroids.append({
+                'name': asteroid['name'],
+                'distance': float(asteroid['close_approach_data'][0]['miss_distance']['kilometers'])
+            })
+    
+    asteroids = sorted(asteroids, key=lambda x: x['distance'])[:10]
+    names = [a['name'] for a in asteroids]
+    distances = [a['distance'] for a in asteroids]
+    
     plt.figure(figsize=(12, 6))
-    plt.bar(country_names, cases, color='skyblue')
-    plt.xlabel('Country')
-    plt.ylabel('Total Cases')
-    plt.title(f'Top {top_n} Countries by COVID-19 Cases')
-    plt.xticks(rotation=45)
+    plt.barh(names, distances, color='skyblue')
+    plt.xlabel('Distance from Earth (km)')
+    plt.ylabel('Asteroid Name')
+    plt.title('Top 10 Closest Near-Earth Asteroids Today')
+    plt.gca().invert_yaxis()
     plt.show()
 
-
 if __name__ == "__main__":
-    covid_data = fetch_covid_data()
-    if covid_data:
-        visualize_covid_data(covid_data)
+    API_KEY = "DEMO_KEY"  # Replace with your NASA API key
+    asteroid_data = fetch_asteroid_data(API_KEY)
+    if asteroid_data:
+        visualize_asteroid_data(asteroid_data)
+
+
+

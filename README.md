@@ -12,7 +12,7 @@ DURATION: 4 WEEKS
 
 MENTOR: NEELA SANTOSH
 
-#OVERVIEW OF THE PROJECT
+# OVERVIEW OF THE PROJECT
 
 Introduction:
 Asteroids, also known as minor planets, are small celestial objects orbiting the Sun. Some of them come very close to Earth, and tracking these near-Earth objects (NEOs) is important for planetary defense, space exploration, and scientific research. NASA provides real-time asteroid tracking data through its Near-Earth Object Web Service (NeoWs) API, which allows developers and researchers to access up-to-date asteroid information.
@@ -57,6 +57,6 @@ This project provides a clear and simple way to explore near-Earth asteroid data
 
 
 
-#OUTPUT
+# OUTPUT
 
 ![Image](https://github.com/user-attachments/assets/a64061ee-3ee8-4f60-b7cf-161899bfd41a)
